@@ -1,6 +1,13 @@
+import os
+def limpar_terminal():
+    if os.name == 'nt':
+        os.system('cls')
+    else: 
+        os.system('clear')    
 print('Bem Vindo ao Jogo da Forca!')
 palavra_secreta = input('Digite a palavra secreta: ').lower().strip()
 lista_de_acertos = ['_' for _ in palavra_secreta]
+limpar_terminal()
 tentativas = 6
 listas_de_letras_tentadas = []
 def palavra_descoberta(lista_de_acertos):
