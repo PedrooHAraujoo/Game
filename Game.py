@@ -74,9 +74,10 @@ def palavra_descoberta(lista_de_acertos):
     return '_' not in lista_de_acertos
 
 while tentativas > 0 and not palavra_descoberta(lista_de_acertos):
+    desenhar_forca(tentativas)
     print(' '.join(lista_de_acertos))
-    print(tentativas)
-    print(','.join(listas_de_letras_tentadas))
+    print(f'Tentativas Restantes: {tentativas}')
+    print(f'Letras tentadas: {", ".join(listas_de_letras_tentadas)}')
 
     letra_do_jogador = input("Digite uma letra: ").lower().strip()
     if len(letra_do_jogador) != 1 or not letra_do_jogador.isalpha():
