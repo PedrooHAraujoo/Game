@@ -12,6 +12,9 @@ while tentativas > 0 and not palavra_descoberta(lista_de_acertos):
     print(','.join(listas_de_letras_tentadas))
 
     letra_do_jogador = input("Digite uma letra: ").lower().strip()
+    if len(letra_do_jogador) != 1 or not letra_do_jogador.isalpha():
+        print('Digite apenas uma letra.')
+        continue
 
     if letra_do_jogador in listas_de_letras_tentadas:
         print('Você já tentou essa letra, tente novamente.')
