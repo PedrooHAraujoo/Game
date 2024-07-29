@@ -3,7 +3,67 @@ def limpar_terminal():
     if os.name == 'nt':
         os.system('cls')
     else: 
-        os.system('clear')    
+        os.system('clear')
+def desenhar_forca(tentativas):
+    estagios = [
+        """
+           -----
+           |   |
+           O   |
+          /|\\  |
+          / \\  |
+               |
+        """,
+        """
+           -----
+           |   |
+           O   |
+          /|\\  |
+          /    |
+               |
+        """,
+        """
+           -----
+           |   |
+           O   |
+          /|\\  |
+               |
+               |
+        """,
+        """
+           -----
+           |   |
+           O   |
+          /|   |
+               |
+               |
+        """,
+        """
+           -----
+           |   |
+           O   |
+           |   |
+               |
+               |
+        """,
+        """
+           -----
+           |   |
+           O   |
+               |
+               |
+               |
+        """,
+        """
+           -----
+           |   |
+               |
+               |
+               |
+               |
+        """
+    ]
+    print(estagios[6 - tentativas]) 
 print('Bem Vindo ao Jogo da Forca!')
 palavra_secreta = input('Digite a palavra secreta: ').lower().strip()
 lista_de_acertos = ['_' for _ in palavra_secreta]
@@ -37,4 +97,5 @@ while tentativas > 0 and not palavra_descoberta(lista_de_acertos):
 if palavra_descoberta(lista_de_acertos):
     print(f'Parabéns, você ganhou! A palavra era {palavra_secreta}.')
 else:
+    desenhar_forca(tentativas)
     print(f'Fim de jogo! A palavra era {palavra_secreta}')
